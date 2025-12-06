@@ -56,6 +56,14 @@
                             Reservas
                         </a>
                     </li>
+                    <!-- Añado "Usuarios" solo para admin -->
+                    <?php if (esAdmin()): ?> <!-- esAdmin está definido en init.php -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="profesores_listado.php">
+                                Usuarios
+                            </a>
+                        </li>
+                    <?php endif; ?>
                 </ul>
                 <!-- Parte derecha del menú (login o usuario) -->
                 <ul class="navbar-nav ms-auto">
@@ -65,7 +73,11 @@
                                 Hola, <?php echo htmlspecialchars($_SESSION["Nombre"]); ?>
                             </span>
                         </li>
-
+                        <li class="nav-item">
+                            <a class="nav-link" href="perfil.php">
+                                Mi perfil
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="logout.php">
                                 Cerrar sesión

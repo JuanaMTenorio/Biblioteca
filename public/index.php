@@ -1,5 +1,9 @@
 <?php
 require_once __DIR__ . '/../includes/init.php';
+
+// Obligo a estar logueado para ver la página principal
+requireLogin();
+
 require_once __DIR__ . '/../includes/header.php';
 ?>
 
