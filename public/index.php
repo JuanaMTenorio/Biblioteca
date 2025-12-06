@@ -132,9 +132,9 @@ require_once __DIR__ . '/../includes/header.php';
                                 <!-- Préstamo / Reserva -->
                                 <?php if ($libro["Estado"] === "disponible"): ?>
                                     <a
-                                        href="#"
-                                        class="btn btn-sm btn-outline-success disabled"
-                                        title="Prestar libro (pendiente)">
+                                        href="prestamos_alta.php?IdEjemplar=<?php echo (int)$libro["IdEjemplar"]; ?>"
+                                        class="btn btn-sm btn-outline-success"
+                                        title="Prestar este libro">
                                         Prestar
                                     </a>
                                 <?php elseif ($libro["Estado"] === "prestado"): ?>

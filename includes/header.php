@@ -40,7 +40,7 @@
 
                     <!-- Enlaces -->
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="prestamos_listados.php">
                             Préstamos
                         </a>
                     </li>
