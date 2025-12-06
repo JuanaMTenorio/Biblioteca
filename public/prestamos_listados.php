@@ -36,7 +36,6 @@ try {
 
     $consulta->execute();
     $prestamos = $consulta->fetchAll(PDO::FETCH_ASSOC);
-
 } catch (PDOException $e) {
     $errores[] = "Error al cargar el listado de préstamos: " . $e->getMessage();
 }
@@ -67,6 +66,7 @@ require_once __DIR__ . '/../includes/header.php';
                     <th>Fecha inicio</th>
                     <th>Fecha fin</th>
                     <th>Observaciones</th>
+                    <th>Operaciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -95,6 +95,19 @@ require_once __DIR__ . '/../includes/header.php';
                             ?>
                         </td>
                         <td><?php echo nl2br(htmlspecialchars($p["Observaciones"])); ?></td>
+                        <td>
+                            <?php if ($p["Fecha_fin"] === null): ?>
+                                <a
+                                    href="prestamos_devolver.php?IdPrestamo=<?php echo (int)$p["IdPrestamo"]; ?>"
+                                    class="btn btn-sm btn-outline-success"
+                                    title="Registrar devolución">
+                                    Devolver
+                                </a>
+                            <?php else: ?>
+                                <span class="text-muted">Devuelto</span>
+                            <?php endif; ?>
+                        </td>
+
                     </tr>
                 <?php endforeach; ?>
             </tbody>
