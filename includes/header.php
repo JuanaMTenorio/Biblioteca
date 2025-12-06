@@ -46,7 +46,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="reservas_listado.php">
                             Reservas
                         </a>
                     </li>
@@ -62,7 +62,7 @@
                 <!-- Parte derecha del menú (login o usuario) -->
                 <ul class="navbar-nav ms-auto">
                     <?php if (isset($_SESSION["IdProf"])): ?>
-                        <li class="nav-item">
+                        <li class="nav-item d-flex align-items-center">
                             <span class="navbar-text me-2">
                                 Hola, <?php echo htmlspecialchars($_SESSION["Nombre"]); ?>
                             </span>

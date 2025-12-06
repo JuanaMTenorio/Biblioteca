@@ -108,7 +108,7 @@ require_once __DIR__ . '/../includes/header.php';
                         </td>
 
                         <td>
-                            <!-- Enlaces de operaciones -->
+                            <!-- COLUMNA de operaciones -->
                             <div class="btn-group" role="group">
 
                                 <?php if (esAdmin()): ?>
@@ -139,9 +139,9 @@ require_once __DIR__ . '/../includes/header.php';
                                     </a>
                                 <?php elseif ($libro["Estado"] === "prestado"): ?>
                                     <a
-                                        href="#"
-                                        class="btn btn-sm btn-outline-warning disabled"
-                                        title="Reservar libro (pendiente)">
+                                        href="reservas_alta.php?IdEjemplar=<?php echo (int)$libro["IdEjemplar"]; ?>"
+                                        class="btn btn-sm btn-outline-warning"
+                                        title="Reservar este libro">
                                         Reservar
                                     </a>
                                 <?php endif; ?>
