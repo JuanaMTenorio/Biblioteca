@@ -20,6 +20,3 @@ try {
     echo "Error de conexión: " . $e->getMessage();
     exit();
 }
-
-// CONSTANTES DE RUTA UTILIZADAS EN LA APP
-define("BASE_URL", "/biblioteca/public/");
