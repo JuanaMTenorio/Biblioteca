@@ -38,13 +38,7 @@
                         </a>
                     </li>
 
-                    <!-- Más adelante activamos enlaces reales -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            Libros
-                        </a>
-                    </li>
-
+                    <!-- Enlaces -->
                     <li class="nav-item">
                         <a class="nav-link" href="#">
                             Préstamos
