@@ -86,6 +86,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $stmtInsert->bindParam(":observaciones", $observaciones);
             $stmtInsert->execute();
 
+            // !!!! PARA obtener ID del préstamo recién creado
+            // NECESARIO para registrar el ID en log_listado de actividad
+            $idPrestamo = $conexion->lastInsertId();
+
+
             // Actualizamos el estado del libro a 'prestado'
             $sqlUpdate = "UPDATE libro
                           SET Estado = 'prestado'
@@ -105,6 +110,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 // Todo OK
                 $conexion->commit();
                 $mensajeOK = "Préstamo registrado correctamente.";
+
+                // !!!! 
+                // NECESARIO para registrar detalles en log_listado de actividad
+                $detalles = "Préstamo del libro IdEjemplar=$idEjemplar";
+                registrarLog('alta', 'prestamo', $idPrestamo, $detalles);
             }
         } catch (PDOException $e) {
             if ($conexion->inTransaction()) {

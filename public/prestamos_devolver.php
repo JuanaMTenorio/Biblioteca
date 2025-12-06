@@ -105,6 +105,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                 $conexion->commit();
                 $mensajeOK = "Devolución registrada correctamente.";
+
+                // !!!! PARA obtener ID del préstamo devuelto
+                // NECESARIO para registrar el log_listado de actividad
+                $detalles = "Devolución del libro IdEjemplar=" . $prestamo["IdEjemplar"];
+                registrarLog('actualizacion', 'prestamo', $idPrestamo, $detalles);
             }
         } catch (PDOException $e) {
             if ($conexion->inTransaction()) {

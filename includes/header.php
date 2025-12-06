@@ -57,6 +57,9 @@
                                 Usuarios
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="log_listado.php">Log actividad</a>
+                        </li>
                     <?php endif; ?>
                 </ul>
                 <!-- Parte derecha del menú (login o usuario) -->
