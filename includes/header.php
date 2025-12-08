@@ -50,6 +50,10 @@
                             Reservas
                         </a>
                     </li>
+                    <!-- Botón búsqueda -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="libros_busqueda.php">Búsqueda</a>
+                    </li>
                     <!-- Añado "Usuarios" solo para admin -->
                     <?php if (esAdmin()): ?> <!-- esAdmin está definido en init.php -->
                         <li class="nav-item">
